@@ -1,0 +1,21 @@
+Część Klienta wraz z funkcjonalnościami:
+
+•	Uczeń
+- możliwość podglądu planu lekcji, wstawianych ocen, listy klasy w której się znajduje, planowanych sprawdzianów oraz obecności
+- wysyłanie prywatnych wiadomości do nauczyciela
+
+•	Nauczyciel
+- dodawanie, usuwanie uczniów z klas
+- wpisywanie oraz edycja ocen, obecności, planowanych sprawdzianów
+- podgląd do planu lekcji uczonych klas, oraz osobnego grafiku swoich lekcji
+- wysyłanie prywatnych wiadomości do ucznia
+
+•	Dyrektor
+- dodawanie i usuwanie nauczycieli, uczniów
+- zarządzanie wynagrodzeniem nauczyciela (przyznawane premie itd.)
+- tworzenie planu zajęć dla pracowników, uczniów
+
+Skład zespołu:
+•	Adam Basiak
+•	Mateusz Budzowski
+•	Bruno Wiech
