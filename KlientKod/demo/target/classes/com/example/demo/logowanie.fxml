@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="536.0" maxWidth="762.0" minHeight="400.0" minWidth="600.0" prefHeight="536.0"
+            prefWidth="750.0" style="-fx-background-color: #0F3D7E;"
+            xmlns="http://javafx.com/javafx/18" fx:controller="com.example.demo.LoginCtrl">
+    <top>
+        <AnchorPane prefHeight="91.0" prefWidth="600.0" style="-fx-background-color: #093069;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="96.0" fitWidth="384.0" layoutX="190.0" layoutY="-5.0">
+                    <image>
+                        <Image url="@obiekt1.png"/>
+                    </image>
+                </ImageView>
+                <Label layoutX="296.0" layoutY="28.0" text="LOGOWANIE" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                    <font>
+                        <Font name="Trebuchet MS Bold Italic" size="30.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                    prefHeight="309.0" prefWidth="600.0" style="-fx-background-color: #0F3D7E;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="236.0" fitWidth="233.0" layoutX="198.0" layoutY="14.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@login.png"/>
+                    </image>
+                </ImageView>
+                <TextField fx:id="username" layoutX="267.0" layoutY="125.0" prefHeight="26.0" prefWidth="104.0"
+                           promptText="Login"/>
+                <Button fx:id="LoginButton" layoutX="275.0" layoutY="205.0" mnemonicParsing="false"
+                        onAction="#LoginButtonListener" style="-fx-background-color: #FFFFFF;" text="zaloguj"
+                        textFill="#18244c"/>
+                <Label fx:id="wrongLogin" layoutX="199.0" layoutY="254.0" textFill="#ff7373"/>
+                <PasswordField fx:id="password" layoutX="267.0" layoutY="164.0" prefHeight="26.0" prefWidth="104.0"
+                               promptText="Hasło"/>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="27.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18244c" height="27.0" stroke="TRANSPARENT"
+                           strokeMiterLimit="0.0" strokeWidth="0.0" width="750.0"/>
+                <Label fx:id="schoolName" layoutX="7.0" layoutY="6.0" prefHeight="18.0" prefWidth="282.0"
+                       text="Szkoła Podstawowa nr 8 w Kostomłotach" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS" size="14.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#396db4" height="4.0" stroke="TRANSPARENT"
+                           strokeType="INSIDE" width="750.0"/>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="750.0"
+            style="-fx-background-color: #0F3D7E;" xmlns="http://javafx.com/javafx/18"
+            fx:controller="com.example.demo.d1_planCtrl">
+    <children>
+        <Label layoutY="331.0" prefHeight="138.0" prefWidth="750.0" style="-fx-background-color: #396DB4;"/>
+        <ImageView fitHeight="39.0" fitWidth="122.0" layoutX="27.0">
+            <image>
+                <Image url="@2labels.png"/>
+            </image>
+        </ImageView>
+        <HBox alignment="TOP_RIGHT" layoutY="38.0" prefHeight="44.0" prefWidth="750.0"
+              style="-fx-background-color: #18244C;">
+            <children>
+                <VBox prefHeight="46.0" prefWidth="186.0">
+                    <children>
+                        <Label fx:id="nameLabelNaucz" prefHeight="20.0" prefWidth="186.0" text="Imie"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="surnameLabelNaucz" prefHeight="26.0" prefWidth="186.0" text="Nazwisko"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <MenuButton fx:id="studentMenuButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="121.0"
+                            style="-fx-background-color: #0F3D7E;" text="Uczniowie" textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="dodajUczen" mnemonicParsing="false" onAction="#dodajUczenListener"
+                                  text="dodaj"/>
+                        <MenuItem fx:id="usunUczen" mnemonicParsing="false" onAction="#usunUczenListener" text="usuń"/>
+                    </items>
+                </MenuButton>
+                <MenuButton fx:id="teacherMenuButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="121.0"
+                            style="-fx-background-color: #0F3D7E;" text="Nauczyciele" textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="dodajNauczyciel" mnemonicParsing="false" onAction="#dodajNauczycielListener"
+                                  text="dodaj"/>
+                        <MenuItem fx:id="usunNauczyciel" mnemonicParsing="false" onAction="#usunNauczycielListener"
+                                  text="usuń "/>
+                    </items>
+                </MenuButton>
+                <Button fx:id="pensjaButton" mnemonicParsing="false" onAction="#pensjaListener" prefHeight="46.0"
+                        prefWidth="121.0" style="-fx-background-color: #0F3D7E;" text="Pensja" textAlignment="CENTER"
+                        textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="planButton" mnemonicParsing="false" onAction="#planListener" prefHeight="46.0"
+                        prefWidth="121.0" style="-fx-background-color: #0F3D7E;" text="Plan Lekcji"
+                        textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="15.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <ImageView fx:id="logoutIcon" fitHeight="20.0" fitWidth="20.0" layoutX="118.0" layoutY="9.0"
+                   onMouseClicked="#logoutListener">
+            <image>
+                <Image url="@logout.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="22.0" layoutY="8.0" text="Dyrektor" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="16.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="22.0" layoutY="40.0">
+            <image>
+                <Image url="@profile.png"/>
+            </image>
+        </ImageView>
+        <HBox alignment="TOP_RIGHT" layoutY="81.0" prefHeight="0.0" prefWidth="750.0"
+              style="-fx-background-color: #18244C;"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18244c" height="27.0" layoutY="473.0" stroke="TRANSPARENT"
+                   strokeMiterLimit="0.0" strokeWidth="0.0" width="750.0"/>
+        <Label fx:id="schoolName" layoutX="7.0" layoutY="476.0" prefHeight="18.0" prefWidth="282.0"
+               text="Szkoła Podstawowa nr 8 w Kostomłotach" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="14.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#396db4" height="6.0" layoutY="467.0" stroke="TRANSPARENT"
+                   strokeType="INSIDE" width="750.0"/>
+        <ImageView fitHeight="226.0" fitWidth="675.0" layoutX="38.0" layoutY="89.0">
+            <image>
+                <Image url="@planLekcji.png"/>
+            </image>
+        </ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="320.0" prefHeight="16.0" prefWidth="750.0"
+               style="-fx-background-color: #18244C;" text="Zapisz nowo ułożony plan dla :" textAlignment="CENTER"
+               textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Button fx:id="zapiszButton" layoutX="619.0" layoutY="434.0" mnemonicParsing="false"
+                onAction="#zapiszButtonListener" prefWidth="105.0" style="-fx-background-color: #00D100;"
+                text="Zapisz"/>
+        <ChoiceBox fx:id="pon1" layoutX="125.0" layoutY="132.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pon2" layoutX="125.0" layoutY="169.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pon3" layoutX="125.0" layoutY="207.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pon4" layoutX="125.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pon5" layoutX="125.0" layoutY="282.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="wt1" layoutX="243.0" layoutY="132.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="wt2" layoutX="243.0" layoutY="169.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="wt3" layoutX="243.0" layoutY="207.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="wt4" layoutX="243.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="wt5" layoutX="243.0" layoutY="282.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="sr1" layoutX="362.0" layoutY="132.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="sr2" layoutX="362.0" layoutY="169.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="sr3" layoutX="362.0" layoutY="207.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="sr4" layoutX="362.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="sr5" layoutX="362.0" layoutY="282.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="czw1" layoutX="482.0" layoutY="132.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="czw2" layoutX="482.0" layoutY="169.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="czw3" layoutX="482.0" layoutY="207.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="czw4" layoutX="482.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="czw5" layoutX="482.0" layoutY="282.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pt1" layoutX="599.0" layoutY="132.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pt2" layoutX="599.0" layoutY="169.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pt3" layoutX="599.0" layoutY="207.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pt4" layoutX="599.0" layoutY="245.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="pt5" layoutX="599.0" layoutY="282.0" prefHeight="28.0" prefWidth="106.0"/>
+        <ChoiceBox fx:id="klasa" layoutX="335.0" layoutY="435.0" prefHeight="28.0" prefWidth="55.0"/>
+        <Label layoutX="-1.0" layoutY="336.0" prefHeight="90.0" prefWidth="750.0"
+               style="-fx-background-color: #1F54A0;"/>
+        <Label layoutX="295.0" layoutY="440.0" text="Klasa :"/>
+        <ChoiceBox fx:id="matematyka" layoutX="90.0" layoutY="343.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="fizyka" layoutX="90.0" layoutY="390.0" prefHeight="28.0" prefWidth="94.0"/>
+        <Label layoutX="7.0" layoutY="348.0" text="Matematyka:"/>
+        <Label layoutX="41.0" layoutY="393.0" prefHeight="18.0" prefWidth="46.0" text="Fizyka:"/>
+        <Label layoutX="215.0" layoutY="348.0" text="J. Polski:"/>
+        <Label layoutX="197.0" layoutY="394.0" prefHeight="18.0" prefWidth="78.0" text="J. Angielski:"/>
+        <Label layoutX="419.0" layoutY="348.0" text="Przyroda:"/>
+        <Label layoutX="425.0" layoutY="393.0" prefHeight="18.0" prefWidth="56.0" text="Chemia:"/>
+        <Label layoutX="605.0" layoutY="348.0" text="W- F:"/>
+        <Label layoutX="591.0" layoutY="393.0" prefHeight="18.0" prefWidth="46.0" text="Religia:"/>
+        <ChoiceBox fx:id="jPolski" layoutX="274.0" layoutY="343.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="jAngielski" layoutX="274.0" layoutY="390.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="wf" layoutX="641.0" layoutY="343.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="religia" layoutX="641.0" layoutY="390.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="przyroda" layoutX="478.0" layoutY="343.0" prefHeight="28.0" prefWidth="94.0"/>
+        <ChoiceBox fx:id="chemia" layoutX="478.0" layoutY="390.0" prefHeight="28.0" prefWidth="94.0"/>
+        <DatePicker fx:id="date" layoutX="132.0" layoutY="437.0" prefHeight="26.0" prefWidth="131.0"
+                    promptText="Poniedziałek"/>
+        <Label layoutX="74.0" layoutY="441.0" text="Data:"/>
+        <Label fx:id="errorLabel" layoutX="368.0" layoutY="477.0" textFill="RED"/>
+        <ChoiceBox fx:id="sala" layoutX="500.0" layoutY="436.0" prefHeight="28.0" prefWidth="94.0"/>
+        <Label layoutX="454.0" layoutY="442.0" text="Sala"/>
+    </children>
+</AnchorPane>

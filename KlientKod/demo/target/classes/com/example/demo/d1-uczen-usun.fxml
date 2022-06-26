@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="750.0"
+            style="-fx-background-color: #0F3D7E;" xmlns="http://javafx.com/javafx/18"
+            fx:controller="com.example.demo.d1_uczen_usunCtrl">
+    <children>
+        <ImageView fitHeight="39.0" fitWidth="122.0" layoutX="27.0">
+            <image>
+                <Image url="@2labels.png"/>
+            </image>
+        </ImageView>
+        <HBox alignment="TOP_RIGHT" layoutY="38.0" prefHeight="44.0" prefWidth="750.0"
+              style="-fx-background-color: #18244C;">
+            <children>
+                <VBox prefHeight="46.0" prefWidth="186.0">
+                    <children>
+                        <Label fx:id="nameLabelNaucz" prefHeight="20.0" prefWidth="186.0" text="Imie"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="surnameLabelNaucz" prefHeight="26.0" prefWidth="186.0" text="Nazwisko"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <MenuButton fx:id="studentMenuButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="121.0"
+                            style="-fx-background-color: #0F3D7E;" text="Uczniowie" textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="dodajUczen" mnemonicParsing="false" onAction="#dodajUczenListener"
+                                  text="dodaj"/>
+                        <MenuItem fx:id="usunUczen" mnemonicParsing="false" onAction="#usunUczenListener" text="usuń"/>
+                    </items>
+                </MenuButton>
+                <MenuButton fx:id="teacherMenuButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="121.0"
+                            style="-fx-background-color: #0F3D7E;" text="Nauczyciele" textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="dodajNauczyciel" mnemonicParsing="false" onAction="#dodajNauczycielListener"
+                                  text="dodaj"/>
+                        <MenuItem fx:id="usunNauczyciel" mnemonicParsing="false" onAction="#usunNauczycielListener"
+                                  text="usuń "/>
+                    </items>
+                </MenuButton>
+                <Button fx:id="pensjaButton" mnemonicParsing="false" onAction="#pensjaListener" prefHeight="46.0"
+                        prefWidth="121.0" style="-fx-background-color: #0F3D7E;" text="Pensja" textAlignment="CENTER"
+                        textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="planButton" mnemonicParsing="false" onAction="#planListener" prefHeight="46.0"
+                        prefWidth="121.0" style="-fx-background-color: #0F3D7E;" text="Plan Lekcji"
+                        textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="15.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <ImageView fx:id="logoutIcon" fitHeight="20.0" fitWidth="20.0" layoutX="118.0" layoutY="9.0"
+                   onMouseClicked="#logoutListener">
+            <image>
+                <Image url="@logout.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="22.0" layoutY="8.0" text="Dyrektor" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="16.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="22.0" layoutY="40.0">
+            <image>
+                <Image url="@profile.png"/>
+            </image>
+        </ImageView>
+        <HBox alignment="TOP_RIGHT" layoutY="81.0" prefHeight="0.0" prefWidth="750.0"
+              style="-fx-background-color: #18244C;"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18244c" height="27.0" layoutY="473.0" stroke="TRANSPARENT"
+                   strokeMiterLimit="0.0" strokeWidth="0.0" width="750.0"/>
+        <Label fx:id="errorLabel" layoutX="199.0" layoutY="445.0" textFill="#ff7373"/>
+        <Label fx:id="schoolName" layoutX="7.0" layoutY="476.0" prefHeight="18.0" prefWidth="282.0"
+               text="Szkoła Podstawowa nr 8 w Kostomłotach" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="14.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#396db4" height="6.0" layoutY="467.0" stroke="TRANSPARENT"
+                   strokeType="INSIDE" width="750.0"/>
+        <TableView fx:id="uczenUsunTableView" layoutX="92.0" layoutY="94.0" onMouseClicked="#tableChoiceListener"
+                   prefHeight="246.0" prefWidth="566.0">
+            <columns>
+                <TableColumn fx:id="idUczenUsunColumn" prefWidth="106.40003204345703" text="Numer ID"/>
+                <TableColumn fx:id="imieNazwiskoUczenUsun" prefWidth="453.0" text="Imie i Nazwisko"/>
+                <TableColumn prefWidth="175.0" text="Klasa"/>
+            </columns>
+        </TableView>
+        <Label layoutX="92.0" layoutY="378.0" prefHeight="66.0" prefWidth="566.0"
+               style="-fx-background-color: #396DB4;"/>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="356.0" prefHeight="28.0"
+               prefWidth="566.0" style="-fx-background-color: #18244C;" text="Dane Ucznia :" textAlignment="CENTER"
+               textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS Bold" size="13.0"/>
+            </font>
+        </Label>
+        <TextArea fx:id="nazwiskoTextFArea" editable="false" layoutX="350.0" layoutY="390.0" prefHeight="6.0"
+                  prefWidth="122.0"/>
+        <TextArea fx:id="idTextFArea" editable="false" layoutX="178.0" layoutY="389.0" prefHeight="0.0"
+                  prefWidth="62.0"/>
+        <Label layoutX="115.0" layoutY="403.0" text="Numer ID :" textFill="WHITE"/>
+        <Label layoutX="258.0" layoutY="403.0" text="Imie i Nazwiskp :" textFill="WHITE"/>
+        <Button fx:id="usunButton" layoutX="523.0" layoutY="392.0" mnemonicParsing="false"
+                onAction="#usunButtonListener" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #FF0000;"
+                text="Usuń" textFill="WHITE"/>
+    </children>
+</AnchorPane>
